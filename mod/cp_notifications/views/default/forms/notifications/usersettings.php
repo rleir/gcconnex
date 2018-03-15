@@ -19,6 +19,7 @@ elgg_load_library('elgg:gc_notification:functions');
 $title = elgg_echo('cp_notifications:heading:page_title');
 
 
+$content .= "<input type='text' style='visibility:hidden' name='user_guid' value='".$user->getGUID()."'> ";
 
 /// DIGEST OPTION FOR USER NOTIFICATIONS
 $enable_digest = elgg_get_plugin_setting('cp_notifications_enable_bulk','cp_notifications');
@@ -115,6 +116,7 @@ $subscribed_colleagues = elgg_get_plugin_user_setting('subscribe_colleague_picke
 	));
 
 	foreach($subbed_colleagues as $c) {
+		
 		$subbed_colleague_guids[] = $c->getGUID();
 	}
 
